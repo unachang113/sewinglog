@@ -8,7 +8,9 @@
     "dev": "remix vite:dev",
     "typecheck": "tsc",
     "xo": "xo",
-    "xo:fix": "xo --fix"
+    "xo:fix": "xo --fix",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@remix-run/node": "^2.8.0",
@@ -28,6 +30,8 @@
     "eslint-config-xo-react": "^0.27.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.1",
