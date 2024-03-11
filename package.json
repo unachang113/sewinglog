@@ -6,7 +6,11 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "xo": "xo",
+    "xo:fix": "xo --fix",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@remix-run/node": "^2.8.0",
@@ -20,13 +24,18 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.8.0",
-    "@remix-run/eslint-config": "^2.8.0",
+    "@remix-run/eslint-config": "^2.8.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "eslint": "^8.38.0",
+    "eslint-config-xo-react": "^0.27.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "xo": "^0.58.0"
   },
   "engines": {
     "node": ">=18.0.0"
