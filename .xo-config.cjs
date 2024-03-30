@@ -5,5 +5,15 @@ module.exports = {
   rules: {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+      }
+    ],
   }
 };
