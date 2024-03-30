@@ -1,0 +1,49 @@
+name: Test
+
+on:
+  # feature/XXXのpushで動く
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  tsc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Compile
+        run: pnpm typecheck:ci
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test
+        run: pnpm run test

@@ -9,6 +9,9 @@ installGlobals();
 export default defineConfig({
   plugins: [remix({presets: [vercelPreset()]}), tsconfigPaths()],
   test: {
+    environment: 'jsdom',
     globals: true,
+    includeSource: ["app/**/*.{ts,tsx}"],
+    exclude: ["node_modules", "e2e"],
   },
 });
