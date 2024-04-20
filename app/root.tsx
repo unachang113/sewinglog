@@ -1,5 +1,9 @@
+import {type LinksFunction} from '@remix-run/node';
 import {Links, Meta, Outlet, Scripts, ScrollRestoration} from '@remix-run/react';
 import {Analytics} from '@vercel/analytics/react';
+import stylesheet from '~/tailwind.css?url';
+
+export const links: LinksFunction = () => [{rel: 'stylesheet', href: stylesheet}];
 
 export function Layout({children}: {readonly children: React.ReactNode}) {
   return (
