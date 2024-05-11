@@ -7,6 +7,9 @@ export default {
       gridTemplateColumns: {
         'card-list': 'repeat(auto-fill, minmax(240px, 1fr))',
       },
+      fontFamily: {
+        logo: ['Pacifico', 'cursive'],
+      },
     },
   },
   plugins: [],
