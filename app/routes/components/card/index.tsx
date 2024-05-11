@@ -1,40 +1,37 @@
 import {Link} from '@remix-run/react';
+import {type MicroCMSContentId, type MicroCMSDate, type MicroCMSImage} from 'microcms-js-sdk';
 
 export type Image = {
   readonly fieldId: string;
-  readonly image: {
-    readonly url: string;
-    readonly width: number;
-    readonly height: number;
-  };
+  readonly image: MicroCMSImage;
   readonly alt: string;
 };
 
 export type Category = {
-  readonly id: string;
   readonly name: string;
-};
+} & MicroCMSDate &
+  MicroCMSContentId;
 
 export type CardProperties = {
   readonly title: string;
-  readonly publishedAt: string;
-  readonly image: Image;
-  readonly id: string;
+  readonly images: Image[];
   readonly category?: Category;
-};
+  readonly publishedAt: MicroCMSDate['publishedAt'];
+} & MicroCMSContentId;
 
-export function Card({title, publishedAt, image, id, category}: CardProperties) {
-  const imageParameters = '?w=600&h=600&q=80&dpx=3&fm=webp';
+export function Card({title, publishedAt, images, id, category}: CardProperties) {
+  const thumbnailParameters = '?w=600&h=600&q=80&dpx=3&fm=webp';
+  const thumbnail = images[0];
 
   return (
     <article className="border-2 border-black">
       <Link to={{pathname: `/posts/${id}`}}>
         <figure className="border-b-2 border-black">
           <img
-            src={`${image.image.url}${imageParameters}`}
-            alt={image.alt}
-            width={image.image.width}
-            height={image.image.height}
+            src={`${thumbnail.image.url}${thumbnailParameters}`}
+            alt={thumbnail.alt}
+            width={thumbnail.image.width}
+            height={thumbnail.image.height}
           />
         </figure>
         <div className="p-4">

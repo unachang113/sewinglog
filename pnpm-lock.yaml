@@ -23,9 +23,9 @@ dependencies:
   isbot:
     specifier: ^4.4.0
     version: 4.4.0
-  microcms-ts-sdk:
-    specifier: ^1.2.0
-    version: 1.2.0
+  microcms-js-sdk:
+    specifier: ^3.1.1
+    version: 3.1.1
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -5893,12 +5893,6 @@ packages:
     engines: {node: '>=18.0.0'}
     dependencies:
       async-retry: 1.3.3
-    dev: false
-
-  /microcms-ts-sdk@1.2.0:
-    resolution: {integrity: sha512-+seq3tzFdYg0FQ3hnPXpqzbwKclMp3cO3TUDc41R064+f2QRXYWRlNg2jzHs3wf8w2zXIJFiomNHk7ypPJt0CQ==}
-    dependencies:
-      microcms-js-sdk: 3.1.1
     dev: false
 
   /micromark-core-commonmark@1.1.0:

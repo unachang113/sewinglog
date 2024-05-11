@@ -16,6 +16,10 @@ const imageMock = {
 const categoryMock = {
   id: '1',
   name: 'カテゴリ名',
+  createdAt: '2021-01-01T00:00:00.000Z',
+  updatedAt: '2021-01-01T00:00:00.000Z',
+  publishedAt: '2021-01-01T00:00:00.000Z',
+  revisedAt: '2021-01-01T00:00:00.000Z',
 };
 
 describe('Card', () => {
@@ -28,10 +32,13 @@ describe('Card', () => {
           posts={[
             {
               id: '1',
-              title: 'タイトル',
-              publishedAt: '2021-01-01',
-              images: [imageMock],
+              title: titleMock,
+              image: imageMock,
               category: categoryMock,
+              createdAt: '2021-01-01T00:00:00.000Z',
+              updatedAt: '2021-01-01T00:00:00.000Z',
+              publishedAt: '2021-01-01T00:00:00.000Z',
+              revisedAt: '2021-01-01T00:00:00.000Z',
             },
           ]}
         />

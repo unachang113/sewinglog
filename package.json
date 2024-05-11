@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node --env-file=.env remix vite:build",
-    "dev": "node --env-file=.env remix vite:dev",
+    "dev": "source .env && pnpm remix vite:dev",
     "typecheck": "tsc",
     "typecheck:ci": "tsc --noEmit",
     "xo": "xo",
@@ -21,7 +21,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/remix": "^2.9.1",
     "isbot": "^4.4.0",
-    "microcms-ts-sdk": "^1.2.0",
+    "microcms-js-sdk": "^3.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
