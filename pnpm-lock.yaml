@@ -23,6 +23,9 @@ dependencies:
   isbot:
     specifier: ^4.4.0
     version: 4.4.0
+  microcms-ts-sdk:
+    specifier: ^1.2.0
+    version: 1.2.0
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -2549,6 +2552,12 @@ packages:
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
+
+  /async-retry@1.3.3:
+    resolution: {integrity: sha512-wfr/jstw9xNi/0teMHrRW7dsz3Lt5ARhYNZ2ewpadnhaIp5mbALhOAP+EAdsC7t4Z6wqsDVv9+W6gm1Dk9mEyw==}
+    dependencies:
+      retry: 0.13.1
+    dev: false
 
   /asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -5879,6 +5888,19 @@ packages:
     resolution: {integrity: sha512-lkJ3Rj/mtjlRcHk6YyCbvZhyWTOzdBvTHsxMmZSk5jxN1YyVSQ+JETAom55mdzfcyDrY/49Z7UCW760BK30crg==}
     dev: true
 
+  /microcms-js-sdk@3.1.1:
+    resolution: {integrity: sha512-Lh234f+r4dje/1XxWNu4sMrjCrqkMkRoc9wr/WN5wsEngTa0ZLMXLNgZm3e74vw/HHj3ipYSJeCA2HyyguN37w==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      async-retry: 1.3.3
+    dev: false
+
+  /microcms-ts-sdk@1.2.0:
+    resolution: {integrity: sha512-+seq3tzFdYg0FQ3hnPXpqzbwKclMp3cO3TUDc41R064+f2QRXYWRlNg2jzHs3wf8w2zXIJFiomNHk7ypPJt0CQ==}
+    dependencies:
+      microcms-js-sdk: 3.1.1
+    dev: false
+
   /micromark-core-commonmark@1.1.0:
     resolution: {integrity: sha512-BgHO1aRbolh2hcrzL2d1La37V0Aoz73ymF8rAcKnohLy93titmv62E0gP8Hrx9PKcKrqCZ1BbLGbP3bEhoXYlw==}
     dependencies:
@@ -7298,6 +7320,11 @@ packages:
   /retry@0.12.0:
     resolution: {integrity: sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==}
     engines: {node: '>= 4'}
+
+  /retry@0.13.1:
+    resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
+    engines: {node: '>= 4'}
+    dev: false
 
   /reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
