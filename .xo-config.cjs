@@ -15,5 +15,9 @@ module.exports = {
           "tsx": "never"
       }
     ],
+    "n/prefer-global/process": [
+      "error",
+      "always"
+    ]
   }
 };

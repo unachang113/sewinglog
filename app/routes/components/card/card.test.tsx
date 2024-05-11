@@ -3,7 +3,6 @@ import {createRemixStub} from '@remix-run/testing';
 import {Card} from '.';
 
 const titleMock = 'タイトル';
-const publishedAtMock = '2021-01-01';
 const imageMock = {
   alt: '画像の説明',
   fieldId: '1',
@@ -16,6 +15,21 @@ const imageMock = {
 const categoryMock = {
   id: '1',
   name: 'カテゴリ名',
+  createdAt: '2021-01-01T00:00:00.000Z',
+  updatedAt: '2021-01-01T00:00:00.000Z',
+  publishedAt: '2021-01-01T00:00:00.000Z',
+  revisedAt: '2021-01-01T00:00:00.000Z',
+};
+
+const postMock = {
+  id: '1',
+  title: titleMock,
+  images: [imageMock],
+  category: categoryMock,
+  createdAt: '2021-01-01T00:00:00.000Z',
+  updatedAt: '2021-01-01T00:00:00.000Z',
+  publishedAt: '2021-01-01T00:00:00.000Z',
+  revisedAt: '2021-01-01T00:00:00.000Z',
 };
 
 describe('Card', () => {
@@ -23,15 +37,7 @@ describe('Card', () => {
     {
       path: '/',
       id: 'root',
-      Component: () => (
-        <Card
-          id="1"
-          title={titleMock}
-          publishedAt={publishedAtMock}
-          image={imageMock}
-          category={categoryMock}
-        />
-      ),
+      Component: () => <Card {...postMock} />,
     },
   ]);
 
@@ -65,7 +71,7 @@ describe('Card', () => {
   it('投稿日時が表示されていること', () => {
     const {getByText} = render(<RemixStub initialEntries={['/']} />);
 
-    expect(getByText('2021-01-01')).toBeInTheDocument();
+    expect(getByText('2021-01-01T00:00:00.000Z')).toBeInTheDocument();
   });
 
   it('categoryがPropsとして渡されている場合、カテゴリーが表示されていること', () => {
@@ -79,9 +85,7 @@ describe('Card', () => {
       {
         path: '/',
         id: 'root',
-        Component: () => (
-          <Card id="1" title={titleMock} publishedAt={publishedAtMock} image={imageMock} />
-        ),
+        Component: () => <Card {...postMock} category={undefined} />,
       },
     ]);
 
