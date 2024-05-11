@@ -3,7 +3,11 @@ import {type Config} from 'tailwindcss';
 export default {
   content: ['./app/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'card-list': 'repeat(auto-fill, minmax(240px, 1fr))',
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

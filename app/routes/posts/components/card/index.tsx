@@ -1,18 +1,21 @@
 import {Link} from '@remix-run/react';
 
-type Image = {
-  readonly url: string;
+export type Image = {
+  readonly fieldId: string;
+  readonly image: {
+    readonly url: string;
+    readonly width: number;
+    readonly height: number;
+  };
   readonly alt: string;
-  width: number;
-  height: number;
 };
 
-type Category = {
+export type Category = {
   readonly id: string;
   readonly name: string;
 };
 
-type Properties = {
+export type CardProperties = {
   readonly title: string;
   readonly publishedAt: string;
   readonly image: Image;
@@ -20,7 +23,7 @@ type Properties = {
   readonly category?: Category;
 };
 
-export function Card({title, publishedAt, image, id, category}: Properties) {
+export function Card({title, publishedAt, image, id, category}: CardProperties) {
   const imageParameters = '?w=600&h=600&q=80&dpx=3&fm=webp';
 
   return (
@@ -28,10 +31,10 @@ export function Card({title, publishedAt, image, id, category}: Properties) {
       <Link to={{pathname: `/posts/${id}`}}>
         <figure className="border-b-2 border-black">
           <img
-            src={`${image.url}${imageParameters}`}
+            src={`${image.image.url}${imageParameters}`}
             alt={image.alt}
-            width={image.width}
-            height={image.height}
+            width={image.image.width}
+            height={image.image.height}
           />
         </figure>
         <div className="p-4">
