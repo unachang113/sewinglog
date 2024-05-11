@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "node --env-file=.env remix vite:build",
+    "build": "source .env && pnpm remix vite:build",
     "dev": "source .env && pnpm remix vite:dev",
     "typecheck": "tsc",
     "typecheck:ci": "tsc --noEmit",
