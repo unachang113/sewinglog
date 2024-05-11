@@ -1,17 +1,17 @@
-import {render, screen} from '@testing-library/react';
+import {render} from '@testing-library/react';
 import {createRemixStub} from '@remix-run/testing';
-import {userEvent} from '@testing-library/user-event';
-import {Link} from '@remix-run/react';
-import {installGlobals} from '@remix-run/node';
 import {Card} from '.';
 
 const titleMock = 'タイトル';
 const publishedAtMock = '2021-01-01';
 const imageMock = {
-  url: 'https://example.com/image.jpg',
   alt: '画像の説明',
-  width: 600,
-  height: 600,
+  fieldId: '1',
+  image: {
+    width: 600,
+    height: 600,
+    url: 'https://example.com/image.jpg',
+  },
 };
 const categoryMock = {
   id: '1',
