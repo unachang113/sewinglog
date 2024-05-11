@@ -24,7 +24,7 @@ const categoryMock = {
 const postMock = {
   id: '1',
   title: titleMock,
-  image: imageMock,
+  images: [imageMock],
   category: categoryMock,
   createdAt: '2021-01-01T00:00:00.000Z',
   updatedAt: '2021-01-01T00:00:00.000Z',

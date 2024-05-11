@@ -1,10 +1,10 @@
 import {render} from '@testing-library/react';
 import {createRemixStub} from '@remix-run/testing';
+import {type Image} from '../card';
 import {CardList} from '.';
 
 const titleMock = 'タイトル';
-const publishedAtMock = '2021-01-01';
-const imageMock = {
+const imageMock: Image = {
   alt: '画像の説明',
   fieldId: '1',
   image: {
@@ -33,12 +33,9 @@ describe('Card', () => {
             {
               id: '1',
               title: titleMock,
-              image: imageMock,
+              images: [imageMock],
               category: categoryMock,
-              createdAt: '2021-01-01T00:00:00.000Z',
-              updatedAt: '2021-01-01T00:00:00.000Z',
               publishedAt: '2021-01-01T00:00:00.000Z',
-              revisedAt: '2021-01-01T00:00:00.000Z',
             },
           ]}
         />
