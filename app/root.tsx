@@ -1,6 +1,7 @@
 import {type LinksFunction} from '@remix-run/node';
 import {Links, Meta, Outlet, Scripts, ScrollRestoration} from '@remix-run/react';
 import {Analytics} from '@vercel/analytics/react';
+import {Header} from './routes/components/header';
 import stylesheet from '~/tailwind.css?url';
 
 export const links: LinksFunction = () => [{rel: 'stylesheet', href: stylesheet}];
@@ -15,10 +16,13 @@ export function Layout({children}: {readonly children: React.ReactNode}) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-        <Analytics />
+        <div className="bg-main-pattern bg-repeat w-full min-h-screen bg-contain flex flex-col gap-10">
+          <Header />
+          <main className="w-10/12 mx-auto">{children}</main>
+          <ScrollRestoration />
+          <Scripts />
+          <Analytics />
+        </div>
       </body>
     </html>
   );

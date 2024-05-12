@@ -24,9 +24,9 @@ export function Card({title, publishedAt, images, id, category}: CardProperties)
   const thumbnail = images[0];
 
   return (
-    <article className="border-2 border-black">
+    <article className="border-2 border-primary bg-white">
       <Link to={{pathname: `/posts/${id}`}}>
-        <figure className="border-b-2 border-black">
+        <figure className="border-b-2 border-primary">
           <img
             src={`${thumbnail.image.url}${thumbnailParameters}`}
             alt={thumbnail.alt}
@@ -35,15 +35,15 @@ export function Card({title, publishedAt, images, id, category}: CardProperties)
           />
         </figure>
         <div className="p-4">
-          <h2 className="font-bold text-base mb-1">{title}</h2>
+          <h2 className="font-bold text-base mb-1 text-primary">{title}</h2>
           <div className="flex flex-wrap justify-between items-center">
-            <span className="text-xs">
+            <span className="text-xs text-secondary">
               <time dateTime={publishedAt}>{publishedAt}</time>
             </span>
             {category && (
               <span
                 data-testid="category"
-                className="text-xs rounded-full bg-slate-700 text-white px-2 py-1"
+                className="text-xs rounded-full bg-secondary text-white px-2 py-1"
               >
                 {category.name}
               </span>

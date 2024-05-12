@@ -20,9 +20,9 @@ export const loader: LoaderFunction = async () => {
 export default function Index() {
   const contents = useLoaderData<CardListType>() as CardListType;
   return (
-    <>
-      <Header />
+    <article className="flex gap-5 flex-col">
+      <h1 className="text-primary font-bold text-3xl font-logo">New Item</h1>
       <CardList posts={contents} />
-    </>
+    </article>
   );
 }
