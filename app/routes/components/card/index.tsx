@@ -35,9 +35,9 @@ export function Card({title, publishedAt, images, id, category}: CardProperties)
           />
         </figure>
         <div className="p-4">
-          <h2 className="font-bold text-base mb-1">{title}</h2>
+          <h2 className="font-bold text-base mb-1 text-primary">{title}</h2>
           <div className="flex flex-wrap justify-between items-center">
-            <span className="text-xs">
+            <span className="text-xs text-secondary">
               <time dateTime={publishedAt}>{publishedAt}</time>
             </span>
             {category && (
