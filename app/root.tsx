@@ -18,7 +18,7 @@ export function Layout({children}: {readonly children: React.ReactNode}) {
       <body>
         <div className="bg-main-pattern bg-repeat w-full min-h-screen bg-contain flex flex-col gap-10">
           <Header />
-          <main className="w-10/12 mx-auto">{children}</main>
+          <main className="w-10/12 mx-auto pb-10">{children}</main>
           <ScrollRestoration />
           <Scripts />
           <Analytics />

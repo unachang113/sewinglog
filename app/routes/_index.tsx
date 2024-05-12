@@ -1,6 +1,5 @@
 import {type LoaderFunction, type MetaFunction} from '@vercel/remix';
 import {useLoaderData} from '@remix-run/react';
-import {Header} from './__components/header';
 import {CardList, type CardListType} from './__components/card-list';
 import {client} from '~/lib/client.server';
 
