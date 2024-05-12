@@ -1,6 +1,6 @@
 import {render} from '@testing-library/react';
 import {createRemixStub} from '@remix-run/testing';
-import {type Image} from '../card';
+import {type Image} from '../../../types/posts';
 import {CardList} from '.';
 
 const titleMock = 'タイトル';
