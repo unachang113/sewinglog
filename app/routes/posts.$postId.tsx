@@ -1,8 +1,9 @@
 /* eslint-disable unicorn/filename-case */
-import parse, {Element, type DOMNode} from 'html-react-parser';
+import parse from 'html-react-parser';
 import {json, useLoaderData} from '@remix-run/react';
 import {type LoaderFunction, type MetaFunction} from '@vercel/remix';
 import {type Post} from '../types/posts';
+import {TimeText} from './__components/time-text';
 import {client} from '~/lib/client.server';
 
 export const loader: LoaderFunction = async ({params, request}) => {
@@ -51,9 +52,11 @@ export default function PostsId() {
           <div className="flex flex-col flex-1 gap-2px">
             <div className="p-4 flex flex-col-reverse lg:gap-2 gap-1 bg-white">
               <h1 className="text-primary lg:text-4xl text-2xl font-bold">{title}</h1>
-              <p className="text-secondary font-bold text-sm">
-                <time dateTime="2024-12-02">{publishedAt}</time>
-              </p>
+              {publishedAt && (
+                <p className="text-secondary font-bold text-sm">
+                  <TimeText dateTime={publishedAt} />
+                </p>
+              )}
             </div>
             <div className="p-4 bg-white text-primary text-md flex-col flex gap-4">
               {parse(description)}

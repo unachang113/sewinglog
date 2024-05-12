@@ -1,6 +1,7 @@
 import {Link} from '@remix-run/react';
 import {type MicroCMSContentId, type MicroCMSDate} from 'microcms-js-sdk';
 import {type Category, type Image} from '../../../types/posts';
+import {TimeText} from '../time-text';
 
 export type CardProperties = {
   readonly title: string;
@@ -27,9 +28,11 @@ export function Card({title, publishedAt, images, id, category}: CardProperties)
         <div className="p-4">
           <h2 className="font-bold text-base mb-1 text-primary">{title}</h2>
           <div className="flex flex-wrap justify-between items-center">
-            <span className="text-xs text-secondary">
-              <time dateTime={publishedAt}>{publishedAt}</time>
-            </span>
+            {publishedAt && (
+              <span className="text-xs text-secondary">
+                <TimeText dateTime={publishedAt} />
+              </span>
+            )}
             {category && (
               <span
                 data-testid="category"
