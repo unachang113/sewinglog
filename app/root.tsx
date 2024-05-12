@@ -1,7 +1,7 @@
 import {type LinksFunction} from '@remix-run/node';
 import {Links, Meta, Outlet, Scripts, ScrollRestoration} from '@remix-run/react';
 import {Analytics} from '@vercel/analytics/react';
-import {Header} from './routes/components/header';
+import {Header} from './routes/__components/header';
 import stylesheet from '~/tailwind.css?url';
 
 export const links: LinksFunction = () => [{rel: 'stylesheet', href: stylesheet}];

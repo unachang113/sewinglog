@@ -1,16 +1,6 @@
 import {Link} from '@remix-run/react';
-import {type MicroCMSContentId, type MicroCMSDate, type MicroCMSImage} from 'microcms-js-sdk';
-
-export type Image = {
-  readonly fieldId: string;
-  readonly image: MicroCMSImage;
-  readonly alt: string;
-};
-
-export type Category = {
-  readonly name: string;
-} & MicroCMSDate &
-  MicroCMSContentId;
+import {type MicroCMSContentId, type MicroCMSDate} from 'microcms-js-sdk';
+import {type Category, type Image} from '../../../types/posts';
 
 export type CardProperties = {
   readonly title: string;
