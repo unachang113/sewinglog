@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TimeText > HTMLとスタイルが変わらないこと 1`] = `
+<DocumentFragment>
+  <time
+    datetime="2021-01-01"
+  >
+    2021.01.01
+  </time>
+</DocumentFragment>
+`;

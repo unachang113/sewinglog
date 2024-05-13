@@ -71,7 +71,7 @@ describe('Card', () => {
   it('投稿日時が表示されていること', () => {
     const {getByText} = render(<RemixStub initialEntries={['/']} />);
 
-    expect(getByText('2021-01-01T00:00:00.000Z')).toBeInTheDocument();
+    expect(getByText('2021.01.01')).toBeInTheDocument();
   });
 
   it('categoryがPropsとして渡されている場合、カテゴリーが表示されていること', () => {
