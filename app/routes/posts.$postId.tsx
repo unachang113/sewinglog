@@ -1,12 +1,19 @@
 /* eslint-disable unicorn/filename-case */
 import parse from 'html-react-parser';
 import {json, useLoaderData} from '@remix-run/react';
-import {type LoaderFunction, type MetaFunction} from '@vercel/remix';
+import {type LoaderFunctionArgs, type MetaFunction} from '@vercel/remix';
 import {type Post} from '../types/posts';
 import {TimeText} from './__components/time-text';
+import {
+  defaultMetaDescription,
+  defaultMetaTitle,
+  defaultOgImage,
+  defaultSiteUrl,
+  metaParameters,
+} from './__constants/meta';
 import {client} from '~/lib/client.server';
 
-export const loader: LoaderFunction = async ({params, request}) => {
+export const loader = async ({params, request}: LoaderFunctionArgs) => {
   // 下書きの場合
   const url = new URL(request.url);
   const draftKey = url.searchParams.get('draftKey');
@@ -31,17 +38,67 @@ export const loader: LoaderFunction = async ({params, request}) => {
   // 下書きの場合キャッシュヘッダを変更
   const headers = draftKey ? {'Cache-Control': 'no-store, max-age=0'} : undefined;
 
-  return json(content, {headers});
+  return json<Post>(content, {headers});
 };
 
-export const meta: MetaFunction<typeof loader> = ({data}) => {
-  return [{title: data.title ? `${data.title} | Sewing log` : '記事が見つかりません | Sewing log'}];
+export const meta: MetaFunction = ({data}) => {
+  const {id, title, description, publishedAt, modifiedAt, images} = data as Post;
+  const image = images[0];
+
+  return [
+    {
+      title: title
+        ? `${title} | ${defaultMetaTitle}`
+        : `記事が見つかりません | ${defaultMetaTitle}`,
+    },
+    {
+      name: 'application-name',
+      content: title
+        ? `${title} | ${defaultMetaTitle}`
+        : `記事が見つかりません | ${defaultMetaTitle}`,
+    },
+    {
+      name: 'description',
+      content: description ?? defaultMetaDescription,
+    },
+    {
+      name: 'og:title',
+      content: title
+        ? `${title} | ${defaultMetaTitle}`
+        : `記事が見つかりません | ${defaultMetaTitle}`,
+    },
+    {
+      name: 'og:description',
+      content: description ?? defaultMetaDescription,
+    },
+    {name: 'og:type', content: 'article'},
+    {name: 'og:url', content: `${defaultSiteUrl}/posts/${id}`},
+    {
+      name: 'og:image',
+      content: image ? image.image.url : defaultOgImage,
+    },
+    {
+      name: 'og:site_name',
+      content: title
+        ? `${title} | ${defaultMetaTitle}`
+        : `記事が見つかりません | ${defaultMetaTitle}`,
+    },
+    {
+      name: 'twitter:title',
+      content: title
+        ? `${title} | ${defaultMetaTitle}`
+        : `記事が見つかりません | ${defaultMetaTitle}`,
+    },
+    {name: 'article:published_time', content: publishedAt},
+    {name: 'article:modified_time', content: modifiedAt},
+    {name: 'article:author', content: 'unachang113'},
+    ...metaParameters,
+  ];
 };
 
 export default function PostsId() {
-  const {title, description, material, publishedAt, category, images} = useLoaderData<
-    typeof loader
-  >() as Post;
+  const {title, description, publishedAt, images, category, material} =
+    useLoaderData<typeof loader>();
   const image = images[0];
   const imageParameters = '?w=1500&h=1500&q=80&dpx=3&fm=webp';
 

@@ -1,23 +1,50 @@
-import {type LoaderFunction, type MetaFunction} from '@vercel/remix';
-import {useLoaderData} from '@remix-run/react';
+import {type MetaFunction} from '@vercel/remix';
+import {json, useLoaderData} from '@remix-run/react';
 import {CardList, type CardListType} from './__components/card-list';
+import {
+  defaultMetaDescription,
+  defaultMetaTitle,
+  defaultOgImage,
+  defaultSiteUrl,
+  metaParameters,
+} from './__constants/meta';
 import {client} from '~/lib/client.server';
 
 export const meta: MetaFunction = () => {
-  return [{title: 'New Remix App'}, {name: 'description', content: 'Welcome to Remix!'}];
+  return [
+    {title: defaultMetaTitle},
+    {name: 'description', content: defaultMetaDescription},
+    {name: 'og:title', content: defaultMetaTitle},
+    {name: 'og:description', content: defaultMetaDescription},
+    {name: 'og:type', content: 'website'},
+    {name: 'og:url', content: defaultSiteUrl},
+    {name: 'og:image', content: defaultOgImage},
+    {name: 'og:site_name', content: defaultMetaTitle},
+    {name: 'twitter:title', content: defaultMetaTitle},
+    ...metaParameters,
+  ];
 };
 
-export const loader: LoaderFunction = async () => {
+type CardListResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: CardListType;
+};
+
+export const loader = async () => {
   // Microcms-js-sdkを使って一覧を取得
-  const {contents} = await client.getList<CardListType>({
+  const data = await client.get<CardListResponse>({
     endpoint: 'contents',
     queries: {limit: 12, orders: '-publishedAt', fields: 'id,title,images,category,publishedAt'},
   });
-  return contents;
+  const {contents} = data;
+  return json<CardListType>(contents);
 };
 
 export default function Index() {
-  const contents = useLoaderData<CardListType>() as CardListType;
+  const contents = useLoaderData<typeof loader>() as CardListType;
+
   return (
     <article className="flex gap-5 flex-col">
       <h1 className="text-primary font-bold text-3xl font-logo">New Item</h1>
