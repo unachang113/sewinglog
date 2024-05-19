@@ -16,6 +16,7 @@ export type Post = {
   readonly images: Image[];
   readonly category?: Category;
   readonly publishedAt: MicroCMSDate['publishedAt'];
+  readonly modifiedAt: MicroCMSDate['updatedAt'];
   readonly description: string;
   readonly material?: string;
 } & MicroCMSContentId;
