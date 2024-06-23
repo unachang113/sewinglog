@@ -1,7 +1,6 @@
 /* eslint-disable unicorn/filename-case */
 import parse from 'html-react-parser';
 import {json, useLoaderData} from '@remix-run/react';
-import {type V2_MetaFunction} from '@remix-run/node';
 import {type LoaderFunctionArgs, type MetaFunction} from '@vercel/remix';
 import {type Post} from '../types/posts';
 import {TimeText} from './__components/time-text';
