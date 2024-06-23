@@ -42,7 +42,7 @@ export const loader = async ({params, request}: LoaderFunctionArgs) => {
 };
 
 export const meta: MetaFunction = ({data}) => {
-  const {id, title, description, publishedAt, modifiedAt, images} = data as Post;
+  const {id, title, description, publishedAt, modifiedAt, images, category} = data as Post;
   const image = images[0];
 
   return [
@@ -50,6 +50,29 @@ export const meta: MetaFunction = ({data}) => {
       title: title
         ? `${title} | ${defaultMetaTitle}`
         : `記事が見つかりません | ${defaultMetaTitle}`,
+    },
+    {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      'script:ld+json': {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        '@context': 'https://schema.org',
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        '@type': 'CreativeWork',
+        about: title,
+        abstract: description,
+        accountablePerson: 'unachang113',
+        thumbnailUrl: image ? image.image.url : '',
+        url: `${defaultSiteUrl}/posts/${id}`,
+        datePublished: publishedAt,
+        dateModified: modifiedAt,
+        author: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          '@type': 'Person',
+          name: 'unachang113',
+          address: 'Japan',
+        },
+        keywords: category ? [category.name] : [],
+      },
     },
     {
       name: 'application-name',

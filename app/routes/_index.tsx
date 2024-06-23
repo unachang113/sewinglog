@@ -13,6 +13,31 @@ import {client} from '~/lib/client.server';
 export const meta: MetaFunction = () => {
   return [
     {title: defaultMetaTitle},
+    {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      'script:ld+json': {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        '@context': 'https://schema.org',
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        '@type': 'WebSite',
+        headline: defaultMetaTitle,
+        description: defaultMetaDescription,
+        url: defaultSiteUrl,
+        image: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          '@type': 'ImageObject',
+          url: defaultOgImage,
+          width: 1200,
+          height: 630,
+        },
+        author: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          '@type': 'Person',
+          name: 'unachang113',
+          address: 'Japan',
+        },
+      },
+    },
     {name: 'description', content: defaultMetaDescription},
     {name: 'og:title', content: defaultMetaTitle},
     {name: 'og:description', content: defaultMetaDescription},
