@@ -1,5 +1,5 @@
 import {type MetaFunction} from '@vercel/remix';
-import {json, useLoaderData} from '@remix-run/react';
+import {useLoaderData} from 'react-router';
 import {CardList, type CardListType} from './__components/card-list';
 import {
   defaultMetaDescription,
@@ -64,7 +64,7 @@ export const loader = async () => {
     queries: {limit: 12, orders: '-publishedAt', fields: 'id,title,images,category,publishedAt'},
   });
   const {contents} = data;
-  return json<CardListType>(contents);
+  return contents;
 };
 
 export default function Index() {

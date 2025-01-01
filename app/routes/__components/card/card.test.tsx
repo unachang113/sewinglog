@@ -1,5 +1,5 @@
 import {render} from '@testing-library/react';
-import {createRemixStub} from '@remix-run/testing';
+import {createRoutesStub} from 'react-router';
 import {Card} from '.';
 
 const titleMock = 'タイトル';
@@ -33,7 +33,7 @@ const postMock = {
 };
 
 describe('Card', () => {
-  const RemixStub = createRemixStub([
+  const RemixStub = createRoutesStub([
     {
       path: '/',
       id: 'root',
@@ -81,7 +81,7 @@ describe('Card', () => {
   });
 
   it('categoryがPropsとして渡されていないない場合、カテゴリーが表示されないこと', () => {
-    const RemixStub = createRemixStub([
+    const RemixStub = createRoutesStub([
       {
         path: '/',
         id: 'root',

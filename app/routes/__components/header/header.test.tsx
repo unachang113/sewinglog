@@ -1,9 +1,9 @@
 import {render} from '@testing-library/react';
-import {createRemixStub} from '@remix-run/testing';
+import {createRoutesStub} from 'react-router';
 import {Header} from '.';
 
 describe('Header', () => {
-  const RemixStub = createRemixStub([
+  const RemixStub = createRoutesStub([
     {
       path: '/',
       id: 'posts',

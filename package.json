@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "source .env && pnpm remix vite:dev",
-    "build": "pnpm remix vite:build",
-    "start": "source .env && pnpm remix-serve ./build/server/index.js",
+    "dev": "source .env && pnpm react-router dev",
+    "build": "pnpm react-router build",
+    "start": "source .env && pnpm react-router-serve build/server/index.js",
     "typecheck": "tsc",
     "typecheck:ci": "tsc --noEmit",
     "xo": "xo",
@@ -16,9 +16,8 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@remix-run/node": "^2.15.2",
-    "@remix-run/react": "^2.15.2",
-    "@remix-run/server-runtime": "^2.15.2",
+    "@react-router/fs-routes": "^7.1.1",
+    "@react-router/node": "^7.0.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/remix": "^2.15.2",
     "dayjs": "^1.11.11",
@@ -26,12 +25,12 @@
     "isbot": "^4.4.0",
     "microcms-js-sdk": "^3.1.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router": "^7.0.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.15.2",
+    "@react-router/dev": "^7.1.1",
     "@remix-run/eslint-config": "^2.15.2",
-    "@remix-run/testing": "^2.15.2",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^14.3.1",
     "@testing-library/user-event": "^14.5.2",
