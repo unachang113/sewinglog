@@ -10,6 +10,7 @@ exports[`Card > HTMLとスタイルが変わらないこと 1`] = `
         class="border-2 border-primary bg-white"
       >
         <a
+          data-discover="true"
           href="/posts/1"
         >
           <figure

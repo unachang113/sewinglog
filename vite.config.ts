@@ -1,17 +1,29 @@
-import {vitePlugin as remix} from '@remix-run/dev';
-import {installGlobals} from '@remix-run/node';
+import { reactRouter } from '@react-router/dev/vite';
 import {defineConfig} from 'vite';
-import {vercelPreset} from '@vercel/remix/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-installGlobals();
-
-export default defineConfig({
-  plugins: [remix({presets: [vercelPreset()]}), tsconfigPaths()],
+export default defineConfig(({ isSsrBuild, command }) => ({
+  build: {
+    rollupOptions: isSsrBuild
+      ? {
+          input: "./server/app.ts",
+        }
+      : undefined,
+  },
+  server: {
+    port: 3000,
+  },
+  ssr: {
+    noExternal: command === "build" ? true : undefined,
+  },
+  plugins: [
+    reactRouter(),
+    tsconfigPaths()
+  ],
   test: {
     environment: 'jsdom',
     globals: true,
     includeSource: ["app/**/*.{ts,tsx}"],
     exclude: ["node_modules", "e2e"],
   },
-});
+}));

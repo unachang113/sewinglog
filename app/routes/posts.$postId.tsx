@@ -1,7 +1,6 @@
 /* eslint-disable unicorn/filename-case */
 import parse from 'html-react-parser';
-import {json, useLoaderData} from '@remix-run/react';
-import {type LoaderFunctionArgs, type MetaFunction} from '@vercel/remix';
+import {type LoaderFunctionArgs, type MetaFunction, useLoaderData} from 'react-router';
 import {type Post} from '../types/posts';
 import {TimeText} from './__components/time-text';
 import {
@@ -36,9 +35,9 @@ export const loader = async ({params, request}: LoaderFunctionArgs) => {
     });
 
   // 下書きの場合キャッシュヘッダを変更
-  const headers = draftKey ? {'Cache-Control': 'no-store, max-age=0'} : undefined;
+  // const headers = draftKey ? {'Cache-Control': 'no-store, max-age=0'} : undefined;
 
-  return json<Post>(content, {headers});
+  return content;
 };
 
 export const meta: MetaFunction = ({data}) => {

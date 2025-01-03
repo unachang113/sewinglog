@@ -1,5 +1,5 @@
 import {render} from '@testing-library/react';
-import {createRemixStub} from '@remix-run/testing';
+import {createRoutesStub} from 'react-router';
 import {type Image} from '../../../types/posts';
 import {CardList} from '.';
 
@@ -23,7 +23,7 @@ const categoryMock = {
 };
 
 describe('Card', () => {
-  const RemixStub = createRemixStub([
+  const RemixStub = createRoutesStub([
     {
       path: '/',
       id: 'root',
