@@ -6,6 +6,10 @@
       "dest": "/favicon.ico"
     },
     {
+      "src": "/ogp.png",
+      "dest": "/ogp.png"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
