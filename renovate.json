@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:base"],
+  "ignorePresets": [":prHourlyLimit2"],
+  "timezone": "Asia/Tokyo",
+  "dependencyDashboard": false,
+  "branchConcurrentLimit": 0,
+  "schedule": ["after 8am on friday", "before 10am on friday"],
+  "packageRules": [
+    {
+      "groupName": "React Router",
+      "matchPackagePrefixes": ["@react-router"]
+    },
+    {
+      "groupName": "react",
+      "matchPackageNames": ["@types/react", "@types/react-dom"],
+      "matchPackagePrefixes": ["react"]
+    }
   ]
 }
