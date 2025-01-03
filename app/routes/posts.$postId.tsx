@@ -1,7 +1,6 @@
 /* eslint-disable unicorn/filename-case */
 import parse from 'html-react-parser';
-import {useLoaderData} from 'react-router';
-import {type LoaderFunctionArgs, type MetaFunction} from '@vercel/remix';
+import {type LoaderFunctionArgs, type MetaFunction, useLoaderData} from 'react-router';
 import {type Post} from '../types/posts';
 import {TimeText} from './__components/time-text';
 import {

@@ -1,5 +1,4 @@
-import {type MetaFunction} from '@vercel/remix';
-import {useLoaderData} from 'react-router';
+import {type MetaFunction, useLoaderData} from 'react-router';
 import {CardList, type CardListType} from './__components/card-list';
 import {
   defaultMetaDescription,
