@@ -48,7 +48,7 @@ dependencies:
 devDependencies:
   '@react-router/dev':
     specifier: ^7.1.1
-    version: 7.1.1(@types/node@20.17.12)(react-router@7.1.1)(typescript@5.4.5)(vite@5.4.12)
+    version: 7.1.1(@types/node@20.17.12)(react-router@7.1.1)(typescript@5.4.5)(vite@5.4.14)
   '@testing-library/jest-dom':
     specifier: ^6.4.5
     version: 6.6.3
@@ -75,7 +75,7 @@ devDependencies:
     version: 4.2.0(@testing-library/dom@10.4.0)
   '@vitejs/plugin-react':
     specifier: ^4.2.1
-    version: 4.3.4(vite@5.4.12)
+    version: 4.3.4(vite@5.4.14)
   '@vitest/ui':
     specifier: ^1.6.0
     version: 1.6.0(vitest@1.6.0)
@@ -114,10 +114,10 @@ devDependencies:
     version: 5.4.5
   vite:
     specifier: ^5.2.11
-    version: 5.4.12(@types/node@20.17.12)
+    version: 5.4.14(@types/node@20.17.12)
   vite-tsconfig-paths:
     specifier: ^4.3.2
-    version: 4.3.2(typescript@5.4.5)(vite@5.4.12)
+    version: 4.3.2(typescript@5.4.5)(vite@5.4.14)
   vitest:
     specifier: ^1.6.0
     version: 1.6.0(@types/node@20.17.12)(@vitest/ui@1.6.0)(jsdom@24.0.0)
@@ -1122,7 +1122,7 @@ packages:
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
     dev: true
 
-  /@react-router/dev@7.1.1(@types/node@20.17.12)(react-router@7.1.1)(typescript@5.4.5)(vite@5.4.12):
+  /@react-router/dev@7.1.1(@types/node@20.17.12)(react-router@7.1.1)(typescript@5.4.5)(vite@5.4.14):
     resolution: {integrity: sha512-+UCrQZBAmdRcC7Bx1ho89T/DeP+FzEErkzrTvdBCpstr8AzOQ6mKlaglXGty15o3fgihBSFF4/J67jGveYIR8Q==}
     engines: {node: '>=20.0.0'}
     hasBin: true
@@ -1170,7 +1170,7 @@ packages:
       set-cookie-parser: 2.6.0
       typescript: 5.4.5
       valibot: 0.41.0(typescript@5.4.5)
-      vite: 5.4.12(@types/node@20.17.12)
+      vite: 5.4.14(@types/node@20.17.12)
       vite-node: 3.0.0-beta.2(@types/node@20.17.12)
     transitivePeerDependencies:
       - '@types/node'
@@ -1212,7 +1212,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@react-router/dev': 7.1.1(@types/node@20.17.12)(react-router@7.1.1)(typescript@5.4.5)(vite@5.4.12)
+      '@react-router/dev': 7.1.1(@types/node@20.17.12)(react-router@7.1.1)(typescript@5.4.5)(vite@5.4.14)
       minimatch: 9.0.4
       typescript: 5.4.5
     dev: false
@@ -1898,7 +1898,7 @@ packages:
       ts-morph: 12.0.0
     dev: false
 
-  /@vitejs/plugin-react@4.3.4(vite@5.4.12):
+  /@vitejs/plugin-react@4.3.4(vite@5.4.14):
     resolution: {integrity: sha512-SCCPBJtYLdE8PX/7ZQAs1QAZ8Jqwih+0VBLum1EGqmCCQal+MIUqLCzj3ZUy8ufbC0cAM4LRlSTm7IQJwWT4ug==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1909,7 +1909,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.0)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.12(@types/node@20.17.12)
+      vite: 5.4.14(@types/node@20.17.12)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8303,7 +8303,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.4.12(@types/node@20.17.12)
+      vite: 5.4.14(@types/node@20.17.12)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8325,7 +8325,7 @@ packages:
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 1.1.2
-      vite: 5.4.12(@types/node@20.17.12)
+      vite: 5.4.14(@types/node@20.17.12)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8337,7 +8337,7 @@ packages:
       - supports-color
       - terser
 
-  /vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.4.12):
+  /vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.4.14):
     resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
     peerDependencies:
       vite: '*'
@@ -8348,14 +8348,14 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 3.0.3(typescript@5.4.5)
-      vite: 5.4.12(@types/node@20.17.12)
+      vite: 5.4.14(@types/node@20.17.12)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: true
 
-  /vite@5.4.12(@types/node@20.17.12):
-    resolution: {integrity: sha512-KwUaKB27TvWwDJr1GjjWthLMATbGEbeWYZIbGZ5qFIsgPP3vWzLu4cVooqhm5/Z2SPDUMjyPVjTztm5tYKwQxA==}
+  /vite@5.4.14(@types/node@20.17.12):
+    resolution: {integrity: sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -8437,7 +8437,7 @@ packages:
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.4.12(@types/node@20.17.12)
+      vite: 5.4.14(@types/node@20.17.12)
       vite-node: 1.6.0(@types/node@20.17.12)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
