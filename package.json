@@ -18,7 +18,7 @@
     "@react-router/express": "^7.1.1",
     "@react-router/fs-routes": "^7.1.1",
     "@react-router/node": "^7.0.0",
-    "@vercel/analytics": "^1.4.1",
+    "@vercel/analytics": "^2.0.0",
     "@vercel/node": "^5.0.0",
     "dayjs": "^1.11.11",
     "express": "^4.21.2",
