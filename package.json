@@ -22,7 +22,7 @@
     "@vercel/node": "^5.0.0",
     "dayjs": "^1.11.11",
     "express": "^4.21.2",
-    "html-react-parser": "^5.1.10",
+    "html-react-parser": "^6.0.0",
     "isbot": "^4.4.0",
     "microcms-js-sdk": "^3.1.1",
     "react": "^19.0.0",
